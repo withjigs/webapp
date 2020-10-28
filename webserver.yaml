@@ -8,7 +8,13 @@
       yum: 
         name: "{{ web_pkg_name }}"
         state: latest
-      notify: restart_httpd  
+      notify: restart_httpd
+    - name: "Open firewall port"
+      firewalld: 
+        service: "{{ web_fw_srv_name }}"
+        enable: yes
+        immediate: yes
+        permanent: yes
   handlers: 
     - name: restart_httpd
       service: 
