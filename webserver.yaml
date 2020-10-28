@@ -1,0 +1,12 @@
+---
+- name: "Install web services"
+  hosts: web
+  become: yes
+  
+  tasks:
+    
+    - name: "Installing package"
+      yum: 
+        name: "{{ web_pkg_name }}"
+        state: latest
+
