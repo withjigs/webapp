@@ -4,9 +4,15 @@
   become: yes
   
   tasks:
-    
     - name: "Installing package"
       yum: 
         name: "{{ web_pkg_name }}"
         state: latest
+  
+  handlers: 
+    - name: restart_httpd
+      service: 
+        name: "{{ web_srv_name }}"
+        state: started
+ 
 
