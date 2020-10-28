@@ -12,7 +12,7 @@
     - name: "Open firewall port"
       firewalld: 
         service: "{{ web_fw_srv_name }}"
-        state: enable
+        state: enabled
         immediate: yes
         permanent: yes
   handlers: 
