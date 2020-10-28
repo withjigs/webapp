@@ -8,7 +8,7 @@
       yum: 
         name: "{{ web_pkg_name }}"
         state: latest
-  
+      notify: restart_httpd  
   handlers: 
     - name: restart_httpd
       service: 
