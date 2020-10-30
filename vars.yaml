@@ -1,0 +1,4 @@
+web_pkg_name: 'httpd'
+web_srv_name: 'httpd'
+web_fw_srv_name: 'http'
+
