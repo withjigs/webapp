@@ -5,18 +5,26 @@
   
   vars_files: 
     - vars.yaml
+
   tasks:
     - name: "Installing package"
       yum: 
         name: "{{ web_pkg_name }}"
         state: latest
       notify: restart_httpd
+
     - name: "Open firewall port"
       firewalld: 
         service: "{{ web_fw_srv_name }}"
         state: enabled
         immediate: yes
         permanent: yes
+
+    - name: "Install mariadb"
+      yum: 
+        name: mariadb-server
+        state: latest
+      
   handlers: 
     - name: restart_httpd
       service: 
