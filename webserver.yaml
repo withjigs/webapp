@@ -30,7 +30,3 @@
       service: 
         name: "{{ web_srv_name }}"
         state: started
- 
-this is line for db
-this is vhost line
-
