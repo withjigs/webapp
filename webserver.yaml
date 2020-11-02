@@ -1,7 +1,7 @@
 ---
 - name: "Install web services"
   hosts: web
-  become: yes
+  become: 1
   
   vars_files: 
     - vars.yaml
